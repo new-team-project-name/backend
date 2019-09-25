@@ -63,9 +63,15 @@ router.post('/events', requireToken, (req, res, next) => {
 
   Event.create(req.body.event)
     // respond to succesful `create` with status 201 and JSON of new "event"
-    .then(event => {
-      res.status(201).json({ event: event.toObject() })
+    .then(data => Event.find())
+    .then(events => {
+      // `events` will be an array of Mongoose documents
+      // we want to convert each one to a POJO, so we use `.map` to
+      // apply `.toObject` to each one
+      return events.map(event => event.toObject())
     })
+    // respond with status 200 and JSON of the events
+    .then(events => res.status(200).json({ events: events }))
     // if an error occurs, pass it off to our error handler
     // the error handler needs the error message and the `res` object so that it
     // can send an error message back to the client
@@ -90,7 +96,15 @@ router.patch('/events/:id', requireToken, removeBlanks, (req, res, next) => {
       return event.updateOne(req.body.event)
     })
     // if that succeeded, return 204 and no JSON
-    .then(() => res.sendStatus(204))
+    .then(data => Event.find())
+    .then(events => {
+      // `events` will be an array of Mongoose documents
+      // we want to convert each one to a POJO, so we use `.map` to
+      // apply `.toObject` to each one
+      return events.map(event => event.toObject())
+    })
+    // respond with status 200 and JSON of the events
+    .then(events => res.status(200).json({ events: events }))
     // if an error occurs, pass it to the handler
     .catch(next)
 })
@@ -106,8 +120,14 @@ router.delete('/events/:id', requireToken, (req, res, next) => {
       // delete the event ONLY IF the above didn't throw
       event.deleteOne()
     })
-    // send back 204 and no content if the deletion succeeded
-    .then(() => res.sendStatus(204))
+    .then(data => Event.find())
+    .then(events => {
+      // `events` will be an array of Mongoose documents
+      // we want to convert each one to a POJO, so we use `.map` to
+      // apply `.toObject` to each one
+      return events.map(event => event.toObject())
+    })
+    .then(events => res.status(200).json({ events: events }))
     // if an error occurs, pass it to the handler
     .catch(next)
 })
