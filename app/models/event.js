@@ -25,11 +25,11 @@ const eventSchema = new mongoose.Schema({
   },
   website: {
     type: String
-  },
-  cohort: {
-    type: String,
-    required: true
   }
+  // cohort: {
+  //   type: String,
+  //   required: true
+  // }
 }, {
   timestamps: true
 })
