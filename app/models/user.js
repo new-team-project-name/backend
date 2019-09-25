@@ -11,12 +11,7 @@ const userSchema = new mongoose.Schema({
     required: true
   },
   token: String
-  // cohort: {
-  //   type: String,
-  //   required: true
-  // }
-},
-{
+}, {
   timestamps: true,
   toObject: {
     // remove `hashedPassword` field when we call `.toObject`
