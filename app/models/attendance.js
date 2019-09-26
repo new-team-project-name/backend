@@ -10,9 +10,9 @@ const attendanceSchema = new mongoose.Schema({
     ref: 'User',
     required: true
   },
-  event: {
+  hangout: {
     type: mongoose.Schema.Types.ObjectID,
-    ref: 'Event',
+    ref: 'Hangout',
     require: true
   }
 }, {

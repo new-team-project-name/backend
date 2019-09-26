@@ -7,7 +7,7 @@ const cors = require('cors')
 // require route files
 const exampleRoutes = require('./app/routes/example_routes')
 const userRoutes = require('./app/routes/user_routes')
-const eventRoutes = require('./app/routes/event_routes')
+const hangoutRoutes = require('./app/routes/hangout_routes')
 const attendanceRoutes = require('./app/routes/attendance_routes')
 
 // require middleware
@@ -67,7 +67,7 @@ app.use(requestLogger)
 // register route files
 app.use(exampleRoutes)
 app.use(userRoutes)
-app.use(eventRoutes)
+app.use(hangoutRoutes)
 app.use(attendanceRoutes)
 
 // register error handling middleware

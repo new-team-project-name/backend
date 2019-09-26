@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const eventSchema = new mongoose.Schema({
+const hangoutSchema = new mongoose.Schema({
   title: {
     type: String,
     required: true
@@ -34,4 +34,4 @@ const eventSchema = new mongoose.Schema({
   timestamps: true
 })
 
-module.exports = mongoose.model('Event', eventSchema)
+module.exports = mongoose.model('Hangout', hangoutSchema)
