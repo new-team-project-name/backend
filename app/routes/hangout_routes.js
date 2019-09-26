@@ -29,7 +29,7 @@ const router = express.Router()
 
 // INDEX
 // GET /hangouts
-router.get('/hangouts', requireToken, (req, res, next) => {
+router.get('/hangouts', (req, res, next) => {
   Hangout.find()
     .then(hangouts => {
       // `hangouts` will be an array of Mongoose documents
