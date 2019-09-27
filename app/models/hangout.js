@@ -14,6 +14,7 @@ const hangoutSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  time: String,
   location: {
     type: String,
     required: true
