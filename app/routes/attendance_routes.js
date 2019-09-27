@@ -48,6 +48,7 @@ router.get('/attendances', requireToken, (req, res, next) => {
 router.get('/attendances/:id', requireToken, (req, res, next) => {
   // req.params.id will be set based on the `:id` in the route
   Attendance.find({hangout: req.params.id})
+    .populate({path: 'owner', select: 'email'})
     .then(attendances => {
       // `attendances` will be an array of Mongoose documents
       // we want to convert each one to a POJO, so we use `.map` to
