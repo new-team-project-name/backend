@@ -14,7 +14,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^3.0.6",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "dotenv": "^8.1.0",
@@ -26,6 +25,7 @@
     "passport-http-bearer": "^1.0.1"
   },
   "devDependencies": {
+    "bcrypt": "^3.0.0",
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
     "eslint": "^4.19.1",
