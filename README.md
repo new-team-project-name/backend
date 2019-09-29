@@ -1,5 +1,6 @@
-
 # SEI 04 HangOuts
+
+An application for the purpose of event planning and coordination for a small group, such as a General Assembly cohort. Users are able to post events, RSVP, and see who is attending those events.
 
 ### Links for SEI 04 Full Stack Project
 
@@ -30,6 +31,10 @@
 # Planning:
 ### Back-end Repository
 * Entity Relationship Diagram: https://drive.google.com/file/d/1xMWPn0lqkRRFwocyPiOQSORsKJ5P5BaE/view
+* Schema:
+  - User exists as standard user with no modifications.
+  - The 'Hangouts' resource requires a title, description, date, and location, all strings, as well as an 'Owner', referencing the user.
+  - The 'Attendances' resource requires a boolean value named 'Going' for whether or not the participant is attending, as well as referecing an 'Owner', a user, and a 'Hangout', a hangout.
 
 ### Front-end Repository
 ## Wireframes
