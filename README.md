@@ -36,6 +36,15 @@ An application for the purpose of event planning and coordination for a small gr
   - The 'Hangouts' resource requires a title, description, date, and location, all strings, as well as an 'Owner', referencing the user.
   - The 'Attendances' resource requires a boolean value named 'Going' for whether or not the participant is attending, as well as referecing an 'Owner', a user, and a 'Hangout', a hangout.
 
+  | Resource | Route | Action |
+  |---|---|---|
+  | Hangout  | /hangouts | Get (index) |
+  | Hangout  | /hangouts  | Create |
+  | Hangout  | /hangouts/:id  | Update |
+  | Hangout  | /hangouts/:id  | Delete |
+  | Attendance  | /attendances | Create  |
+  | Attendance  | /attendances/:id | Get (By hangout ID) |
+
 ### Front-end Repository
 ## Wireframes
 * Unregistered: https://drive.google.com/file/d/12lvoUPp0QOly8RMco8TTG74vPFPP-8kw/view
